@@ -37,9 +37,10 @@ class AudioFile(db.Model):
     uuid = db.Column(db.String(), nullable=False)
     audio_data = db.Column(db.LargeBinary)
 
-    def __init__(self, audio_data):
+    def __init__(self, user_id, audio_data):
         self.uuid = str(uuid.uuid4())
         self.audio_data = audio_data
+        self.user_id = user_id
 
     def __repr__(self):
         return f"<User {self.id}, {self.name}, {self.uuid}>"

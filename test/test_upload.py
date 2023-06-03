@@ -2,7 +2,7 @@ import requests
 import json
 
 url = 'http://localhost:80/api/users'
-data = '{"username": "gerussca2"}'
+data = '{"username": "AlexDarkStalker"}'
 headers = {'Content-type': 'application/json'}
 response = requests.post(url, json=json.loads(data), headers=headers)
 
@@ -13,7 +13,7 @@ access_token = response_data["access_token"]
 
 url = 'http://localhost:80/api/upload'
 file_path = 'audio.wav'
-data = {'user_id': user_id, 'access_token': access_token
+data = {'user_id': user_id, 'access_token': access_token}
 headers = {'Content-type': 'multipart/form-data'}
 
 with open(file_path, 'rb') as file:
